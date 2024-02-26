@@ -79,7 +79,7 @@ public class MarioScript : MonoBehaviour
         rb.velocity = nVel;
 
 
-        if (_intentionToJump && (grnd || currentsJumps <= MaxJumps ))
+        if (_intentionToJump && (grnd || currentsJumps < MaxJumps ))
         {
             _animator.Play("jumpAnimation");
             AddJumpForce();
