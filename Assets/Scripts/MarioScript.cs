@@ -54,6 +54,7 @@ public class MarioScript : MonoBehaviour
             Instantiate(fireworkPrefab, transform.position, Quaternion.identity);
         }
 
+        
         #region ANIMACIONES
         // ANIMACIONES (PROXIMA DIA ORGANIZARLO EN OTRO SCRIPT)
         if (dir != Vector2.zero)

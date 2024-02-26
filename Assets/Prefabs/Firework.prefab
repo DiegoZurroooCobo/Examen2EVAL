@@ -101,7 +101,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112,7 +112,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!114 &839401756786255468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,3 +132,9 @@ MonoBehaviour:
   maxFireworks: 8
   fireworkPrefab: {fileID: 739398319963719684}
   maxExplosions: 3
+  colors:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0.0866977, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0.10449934, b: 1, a: 1}
+  - {r: 1, g: 0.8041725, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0.746696, a: 1}
