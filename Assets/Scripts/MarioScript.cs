@@ -84,6 +84,7 @@ public class MarioScript : MonoBehaviour
         {
             _animator.Play("jumpAnimation");
             AddJumpForce();
+            currentsJumps++;
         }
         _intentionToJump = false;
 

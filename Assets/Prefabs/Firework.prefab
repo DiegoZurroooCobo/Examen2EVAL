@@ -126,12 +126,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 3.5
-  minTimeToExplode: 0.3
-  maxTimeToExplode: 0.5
+  minTimeToExplode: 0.1
+  maxTimeToExplode: 1
   minFireworks: 3
   maxFireworks: 8
   fireworkPrefab: {fileID: 739398319963719684}
-  maxExplosions: 3
+  maxExplosions: 1
   colors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0.0866977, g: 1, b: 0, a: 1}
