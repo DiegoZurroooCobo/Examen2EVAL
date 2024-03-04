@@ -8,7 +8,6 @@ public class Firework : MonoBehaviour
     public int minFireworks, maxFireworks;
     public GameObject fireworkPrefab;
     public int maxExplosions = 3;
-    public Color[] colors = new Color[5];
 
     private Rigidbody2D _rb;
     private SpriteRenderer _rend;
@@ -21,34 +20,31 @@ public class Firework : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _rend = GetComponent<SpriteRenderer>();
         GameManager.instance.SetFireworks(GameManager.instance.GetFireworks() + 1);
-        _rb.AddForce(Vector2.up * force * _rb.gravityScale, ForceMode2D.Impulse);
-        _rend.color = colors[0];
-        Random.Range(colors.Length, colors.Length);
+        _rb.AddForce(force * _dir, ForceMode2D.Impulse);
+        _rend.color = new Color(Random.Range(0, 1f), Random.Range(0, 1f), Random.Range(0, 1f), 1f);
         currentTime = 0;
         timeToExplode = Random.Range(minTimeToExplode, maxTimeToExplode);
     }
     private void Update()
     {
-        currentTime += Time.deltaTime;
-        if(currentTime >= timeToExplode) 
-        {
-            Destroy(gameObject);
-        }    
+
     }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(currentTime >= maxTimeToExplode) 
-        { 
-            if(maxExplosions >= 1) 
+        currentTime += Time.deltaTime;
+        if (currentTime >= timeToExplode)
+        {
+            if (_count < maxExplosions)
             {
-               maxExplosions++;
-               GameObject FireWorks = Instantiate(fireworkPrefab, transform.position, Quaternion.identity);
-               FireWorks.GetComponent<Firework>();
-               _dir.x = Random.Range(-1, 2);
-               _dir.y = Random.Range(-1, 2);
+                int rndFW = Random.Range(minFireworks, maxFireworks);
+                for (int i = 0; i < rndFW; i++)
+                {
+                    Firework fw = Instantiate(fireworkPrefab, transform.position, Quaternion.identity).gameObject.GetComponent<Firework>();
+                    fw._dir = new Vector2(Random.Range(-1, 2), Random.Range(-1, 2));
+                    fw._count += _count + 1;
+                }
             }
-
             Destroy(gameObject);
         }
     }

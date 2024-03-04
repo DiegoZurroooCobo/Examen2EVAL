@@ -68,6 +68,7 @@ public class GameManager : MonoBehaviour
     public void SetFireworks(int value) 
     { 
         fireworks = value;
+        //AddFireworks(); fireworks++;
     }
     // callback ---> funcion que se va a llamar en el onclick() de los botones
     public void LoadScene(string sceneName)
